@@ -63,7 +63,7 @@ class LaplaceL2(nn.Module):
         ic, oc, k1, k2 = x.size()
         if weights is None:
             weights = 1.0
-        return (self.laplace(x.view(ic * oc, 1, k1, k2)).view(ic, oc, k1, k2).pow(2) * weights).mean() / 2
+        return (self.laplace(x.view(ic * oc, 1, k1, k2)).pow(2) * weights).mean() / 2
 
 
 class LaplaceL23d(nn.Module):

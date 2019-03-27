@@ -14,8 +14,8 @@ from torch.nn import Parameter
 from torch.nn.init import xavier_normal
 
 
-def elu1(x):
-    return F.elu(x, inplace=True) + 1.
+def elu1(x, inplace=True):
+    return F.elu(x, inplace=inplace) + 1.
 
 
 class Elu1(nn.Module):

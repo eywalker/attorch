@@ -120,6 +120,10 @@ class H5SequenceSet(Dataset):
                 x = tr.inv(x)
         return x
 
+    def __dir__(self):
+
+        return super().__dir__() + list(self._fid)
+
     def __getitem__(self, item):
         x = self.data_point(*(np.array(self._fid[g][str(item)]) for g in self.data_groups))
         for tr in self.transforms:
